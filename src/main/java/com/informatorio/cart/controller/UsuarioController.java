@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -69,21 +70,26 @@ public class UsuarioController {
         return usuarioRepository.findByCiudadStartingWith(ciudad);
     }
 
+    //@GetMapping(value = "fechaDeCreacion/{fechaDeCreacion}")
+    //public List<Usuario> buscarPorFechaDeCreacion(@PathVariable("fechaDeCreacion") LocalDate fechaDeCreacion){
+    //    return usuarioRepository.findByFechaDeCreacionAfter(fechaDeCreacion);
+    //}
+
+    //@GetMapping(value = "fechaDeCreacion/fechaDeCreacion")
+    //public List<Usuario> buscarPorFechaDeCreacion(@RequestParam  @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDateTime fecha){
+    //    return usuarioRepository.findByFechaDeCreacionAfter(fecha);
+   // }
+
     @GetMapping(value = "fechaDeCreacion/{fechaDeCreacion}")
-    public List<Usuario> buscarPorFechaDeCreacion(@PathVariable("fechaDeCreacion") LocalDate fechaDeCreacion){
-        return usuarioRepository.findByFechaDeCreacionAfter(fechaDeCreacion);
+    public List<Usuario> buscarPorFechaDeCreacion(@RequestParam("fechaDeCreacion")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fechaDeCreacion){
+        return usuarioRepository.getByFechaDeCreacionAfter(fechaDeCreacion);
     }
 
-    /*
-    @GetMapping(value = "fechaDeCreacion/{fechaDeCreacion}")
-    public ResponseEntity<?> buscarUsuariosCreadosDespuesDeFecha(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaDeCreacion) {
-      List<Usuario> usuario = usuarioRepository.findByFechaDeCreacionAfter(fechaDeCreacion);
-      return new ResponseEntity<>(usuario, HttpStatus.OK);
-    }
-    */
-
-
-
+    //@PostMapping("/local-date-time")
+    //public void dateTime(@RequestParam("localDateTime")
+    //  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime) {
+        // ...
+    //}
 
     /*
     @GetMapping

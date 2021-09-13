@@ -23,5 +23,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     List<Usuario> findByCiudadStartingWith(String ciudad);
 
-    List<Usuario> findByFechaDeCreacionAfter(LocalDate fechaDeCreacion);
+    List<Usuario> findByFechaDeCreacionAfter(LocalDateTime fechaDeCreacion);
+
+    List<Usuario> getByFechaDeCreacionAfter(LocalDateTime fecha);
 }

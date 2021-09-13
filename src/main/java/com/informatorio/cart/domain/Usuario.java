@@ -26,10 +26,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, updatable = true)
     @NotBlank(message = "El nombre no debe ser blanco o nulo")
+    @Length(min = 2)
     private String nombre;
 
+    @Column(nullable = false, updatable = true)
     @NotBlank(message = "El apellido no debe ser blanco o nulo")
+    @Length(min = 2)
     private String apellido;
 
     @Column(unique = true)
@@ -41,7 +45,7 @@ public class Usuario {
     private String password;
 
     @CreationTimestamp
-    private LocalDate fechaDeCreacion;
+    private LocalDateTime fechaDeCreacion;
 
     @NotBlank
     private String ciudad;
@@ -95,11 +99,11 @@ public class Usuario {
         this.password = password;
     }
 
-    public LocalDate getFechaDeCreacion() {
+    public LocalDateTime getFechaDeCreacion() {
         return fechaDeCreacion;
     }
 
-    public void setFechaDeCreacion(LocalDate fechaDeCreacion) {
+    public void setFechaDeCreacion(LocalDateTime fechaDeCreacion) {
         this.fechaDeCreacion = fechaDeCreacion;
     }
 

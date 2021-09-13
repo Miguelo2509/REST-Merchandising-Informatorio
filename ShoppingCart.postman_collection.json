@@ -125,7 +125,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/usuario/fechaDeCreacion/2021-09-12T19:15:47.749942",
+							"raw": "localhost:8080/usuario/fechaDeCreacion/2021-08-13 10:15:47.350696000",
 							"host": [
 								"localhost"
 							],
@@ -133,7 +133,7 @@
 							"path": [
 								"usuario",
 								"fechaDeCreacion",
-								"2021-09-12T19:15:47.749942"
+								"2021-08-13 10:15:47.350696000"
 							]
 						}
 					},
@@ -191,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cantidad\": 8,\n    \"productoId\": 1\n}",
+							"raw": "{\n    \"cantidad\": 7,\n    \"productoId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,16 +199,16 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/usuario/6/carrito/6",
+							"raw": "localhost:8080/usuario/1/carrito/1",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"usuario",
-								"6",
+								"1",
 								"carrito",
-								"6"
+								"1"
 							]
 						}
 					},
@@ -221,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"device\": \"mobile\"\n}",
+							"raw": "{\n    \"generadoPor\": \"mobile\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,14 +229,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/usuario/6/carrito",
+							"raw": "localhost:8080/usuario/1/carrito",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"usuario",
-								"6",
+								"1",
 								"carrito"
 							]
 						}
