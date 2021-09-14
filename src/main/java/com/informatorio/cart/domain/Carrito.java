@@ -34,8 +34,8 @@ public class Carrito {
     @ManyToOne(fetch = FetchType.LAZY)
     private Usuario usuario;
 
-    @Transient
-    private String email;
+    //@Transient
+    //private String email;
 
     @CreationTimestamp
     private LocalDateTime fechaDeCreacion;
@@ -70,13 +70,13 @@ public class Carrito {
         this.usuario = usuario;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    //public String getEmail() {
+    //    return email;
+    //}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    //public void setEmail(String email) {
+    //    this.email = email;
+    //}
 
     public LocalDateTime getFechaDeCreacion() {
         return fechaDeCreacion;

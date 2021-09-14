@@ -14,4 +14,11 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //SELECT * FROM Product WHERE nombre LIKE "a%"
     @Query("SELECT p FROM Producto p WHERE p.nombre LIKE %:comienzaCon%")
     List<Producto> buscarPorNombreQueComienza(@Param("comienzaCon") String comienzaCon);
+
+    List<Producto> findByNombreStartingWith(String nombre);
+
+    List<Producto> findByNombreContaining(String nombre);
+
+    List<Producto> findByPublicadoFalse();
+
 }

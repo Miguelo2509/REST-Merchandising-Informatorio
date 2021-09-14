@@ -41,7 +41,7 @@ public class UsuarioController {
     @DeleteMapping(value = "{id}")
     public String deleteUsuarioPorId(@PathVariable("id") Long id) { usuarioRepository.deleteById(id); return null; }
 
-    //Falta cambiar el pasword que no tiene GETTER
+    //Falta cambiar el password que no tiene GETTER
     //@RequestMapping(value = "{id}", method = RequestMethod.PUT)
     @PutMapping(value = "{id}")
     public Usuario modificarUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuario) {

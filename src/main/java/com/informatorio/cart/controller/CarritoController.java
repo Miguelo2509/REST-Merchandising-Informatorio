@@ -52,6 +52,7 @@ public class CarritoController {
         lineaDeCarrito.setCarrito(carrito);
         lineaDeCarrito.setProducto(producto);
         lineaDeCarrito.setCantidad(operacionCarrito.getCantidad());
+        lineaDeCarrito.setPrecioUnitario(producto.getPrecioUnitario());
         carrito.agregarLineDeCarrito(lineaDeCarrito);
         return new ResponseEntity<>(carritoRepository.save(carrito), HttpStatus.CREATED);
     }

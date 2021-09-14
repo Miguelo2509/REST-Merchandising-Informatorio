@@ -191,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cantidad\": 7,\n    \"productoId\": 1\n}",
+							"raw": "{\n    \"cantidad\": 2,\n    \"productoId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -221,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"generadoPor\": \"mobile\"\n}",
+							"raw": "{\n    \"generadoPor\": \"web\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,6 +378,45 @@
 							"path": [
 								"producto",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Producto Por Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/producto/nombre/Hombre",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"nombre",
+								"Hombre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Producto No Publicado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/producto/noPublicado",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"producto",
+								"noPublicado"
 							]
 						}
 					},

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 @Entity
@@ -22,12 +23,14 @@ public class LineaDeCarrito {
     @ManyToOne(fetch = FetchType.LAZY)
     Producto producto;
 
+    @Positive
     private Integer cantidad;
 
+    @Positive
+    private BigDecimal precioUnitario;
 
     @Transient
     private BigDecimal subtotal;
-
 
 
     public Long getId() {
@@ -64,5 +67,17 @@ public class LineaDeCarrito {
 
     public BigDecimal getSubtotal() {
         return producto.getPrecioUnitario().multiply(BigDecimal.valueOf(cantidad));
+    }
+
+    public BigDecimal getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(BigDecimal precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
     }
 }

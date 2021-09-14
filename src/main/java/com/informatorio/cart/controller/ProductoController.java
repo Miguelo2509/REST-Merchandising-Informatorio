@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/producto")
@@ -54,6 +55,21 @@ public class ProductoController {
         productoExistente.setPublicado(producto.getPublicado());
         productoExistente.setPrecioUnitario(producto.getPrecioUnitario());
         return productoRepository.save(productoExistente);
+    }
+
+    @GetMapping(value = "nombre/{nombre}")
+    public List<Producto> buscarPorNombre(@PathVariable("nombre") String nombre){
+        return productoRepository.findByNombreContaining(nombre);
+    }
+
+    //@GetMapping(value = "nombre/{buscarContiene}")
+    //public List<Producto> buscarPorNombre(@RequestParam String nombre){
+    //    return productoRepository.findByNombreContaining(nombre);
+    //}
+
+    @GetMapping(value = "noPublicado")
+    public List<Producto> buscarProductoNoPublicados(){
+        return productoRepository.findByPublicadoFalse();
     }
 
 }
